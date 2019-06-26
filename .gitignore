@@ -1,0 +1,10 @@
+**/codebuild-input.zip
+output/
+creds.md
+.editorconfig
+**/.terraform
+**/debug*
+**/*.plan
+**/*.tfstate*
+**/override.tf
+crash.log

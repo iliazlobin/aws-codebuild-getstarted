@@ -1,0 +1,22 @@
+{
+  "name": "codebuild-project",
+  "source": {
+    "type": "S3",
+    "location": "codebuild-690612908881-input/codebuild-input.zip"
+  },
+  "artifacts": {
+    "type": "S3",
+    "location": "codebuild-690612908881-output"
+  },
+  "environment": {
+    "type": "LINUX_CONTAINER",
+    "image": "iliazlobin/maven:3-jdk-11-slim",
+    "computeType": "BUILD_GENERAL1_SMALL",
+    "imagePullCredentialsType": "SERVICE_ROLE",
+    "registryCredential": {
+      "credential": "arn:aws:secretsmanager:us-east-1:690612908881:secret:dockerhub-credentials-iliazlobin-lYww8g",
+      "credentialProvider": "SECRETS_MANAGER"
+    }
+  },
+  "serviceRole": "CodeBuildServiceRole"
+}

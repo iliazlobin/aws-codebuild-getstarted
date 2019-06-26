@@ -1,0 +1,17 @@
+{
+  "name": "codebuild-project",
+  "source": {
+    "type": "S3",
+    "location": "codebuild-690612908881-input/codebuild-input.zip"
+  },
+  "artifacts": {
+    "type": "S3",
+    "location": "codebuild-690612908881-output"
+  },
+  "environment": {
+    "type": "LINUX_CONTAINER",
+    "image": "aws/codebuild/standard:2.0",
+    "computeType": "BUILD_GENERAL1_SMALL"
+  },
+  "serviceRole": "CodeBuildServiceRole"
+}
